@@ -12,7 +12,7 @@ const TabWidget = () => {
 
   return (
     <div
-      className="relative w-[720px] h-[316px] rounded-[18.89px] mt-[96px] mr-[86px] flex flex-col items-center"
+      className="relative w-[720px] max-w-full h-[316px] rounded-[18.89px] mt-[96px] md:mr-[86px] flex flex-col items-center"
       style={{
         backgroundColor: "#363C43",
         boxShadow: "5.67px 5.67px 3.78px 0 rgba(0,0,0,0.4)",
@@ -20,7 +20,7 @@ const TabWidget = () => {
     >
       {/* Tabs Container */}
       <div
-        className="w-[614px] h-[62px] rounded-[23px] flex items-center mt-[17px]"
+        className="w-[614px] max-w-full h-[62px] rounded-[23px] flex items-center mt-[17px]"
         style={{
           backgroundColor: "#171717",
           boxShadow: "inset 0px 4.96px 12.4px 2.48px rgba(0,0,0,0.25)",
@@ -38,8 +38,10 @@ const TabWidget = () => {
             <div
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`group relative w-[195px] h-[49px] rounded-[16px] flex items-center justify-center cursor-pointer overflow-hidden transition-all duration-200 ease-in-out`}
+              className={`group relative h-[49px] rounded-[16px] flex items-center justify-center cursor-pointer overflow-hidden transition-all duration-200 ease-in-out`}
               style={{
+                 width: '195px', // exact width for large screens
+    minWidth: '0', 
                 ...(isActive
                   ? {
                       backgroundColor: "#28292F",
@@ -70,9 +72,9 @@ const TabWidget = () => {
         })}
       </div>
 
-      <div className="flex-1 mt-[35px] w-[611px] ">
+      <div className="flex-1 mt-[35px] w-[611px] max-w-full ">
          <p
-    className="font-plusjakarta-sans text-[20px] text-[#969696]"
+    className="font-plusjakarta-sans text-[20px] text-[#969696] leading-[28px]"
    
   >
    Hello! I’m Dave, your sales rep here from Salesforce. I’ve been working at this awesome company for 3 years now.
@@ -89,12 +91,14 @@ I was born and raised in Albany, NY& have been living in Santa Carla for the pas
 ></div>
    <img
    src={Frame}
-   className="absolute top-[20px] left-[12px] w-auto h-auto"
+   className="absolute top-[20px] left-[12px] max-w-full h-auto"
    />
     </div>
   );
 };
 
 export default TabWidget;
+
+
 
 

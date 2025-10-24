@@ -2,12 +2,13 @@
 export default {
   content: [
     "./index.html", 
-    "./src/**/*.{js,jsx,ts,tsx}", // order also simplified
+    "./src/**/*.{js,jsx,ts,tsx}", 
   ],
   theme: {
     extend: {
        fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
+       plusJakarta: ['Plus Jakarta Sans'],
     },
     },
   },
